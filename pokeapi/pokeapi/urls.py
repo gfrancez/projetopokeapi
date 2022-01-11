@@ -16,16 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from rest_framework import routers
-
-from pokemon.api import viewsets as pokemonviewsets
-
-route = routers.DefaultRouter()
-
-route.register(r'pokemon/', pokemonviewsets.PokemonViewset, basename='Pokemon')
-
-
 urlpatterns = [
+    path('api/v1/', include('pokemon.urls')),
     path('admin/', admin.site.urls),
-    path('', include(route.urls))
+    path('auth/', include('rest_framework.urls')),
 ]

@@ -29,10 +29,10 @@ def get_stats(pokemon):
     
     return poke_list 
 
-                                                                   
+                                   
 def get_id(pokemon):
     poke = conn(pokemon)
     return poke['id']
 
 if __name__ == '__main__':
-    print(get_stats('pikachu'))
+    print(get_stats({'ditto'}))
